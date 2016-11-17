@@ -7,9 +7,9 @@ from news import News
 # w = Weather()
 # weather = w.get_weather()
 # s = Speech()
-# s.say_text(weather)
+# s.say_text('Игорь Голая баба дроид')
 #
 # c = CommandHolder()
 # c.run_command('погода')
 n = News()
-n.get_news()
+n.say_news()
