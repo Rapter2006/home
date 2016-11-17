@@ -4,7 +4,8 @@
 # from speech import Speech
 # from command_holder import CommandHolder
 # from news import News
-from habrahabr import Habrahabr
+from telegram_bot import Telegram
+#from habrahabr import Habrahabr
 # w = Weather()
 # weather = w.get_weather()
 # s = Speech()
@@ -14,5 +15,7 @@ from habrahabr import Habrahabr
 # c.run_command('погода')
 # n = News()
 # n.say_news()
-h = Habrahabr()
-h.get_news()
+# h = Habrahabr()
+# h.get_news()
+
+t = Telegram()
