@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Simple Bot to reply to Telegram messages
-# This program is dedicated to the public domain under the CC0 license.
-
 #from weather import Weather
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
@@ -33,7 +29,6 @@ class Telegram(object):
     def __init_logger(self):
         logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
-
         self.logger = logging.getLogger(__name__)
 
     def __init__(self):
