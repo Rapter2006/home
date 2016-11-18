@@ -2,10 +2,13 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 from flask import request
+from telegram_bot import Telegram
 from command_holder import CommandHolder
 
 app = Flask(__name__)
 command_holder = CommandHolder()
+telegram = Telegram()
+
 
 @app.route('/command', methods=['POST'])
 def run_command():

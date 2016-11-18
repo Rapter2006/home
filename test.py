@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 #from weather import Weather
 from speech import Speech
+from var9 import Var9
 # from command_holder import CommandHolder
 from news import News
 from telegram_bot import Telegram
@@ -17,5 +18,7 @@ from habrahabr import Habrahabr
 # n.say_news()
 # h = Habrahabr()
 # h.say_habr_news()
-
 #t = Telegram()
+
+v = Var9()
+v.say_sweet_word()
