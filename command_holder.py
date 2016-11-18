@@ -3,22 +3,22 @@
 from weather import Weather
 from habrahabr import Habrahabr
 from news import News
+from threading import Lock
 
 class CommandHolder(object):
     def __init__(self):
-        weather = Weather()
-        habr = Habrahabr()
-        news = News()
-        self.commands = {
-            'погода': weather.say_weather(),
-            'хабр': habr.say_habr_news(10),
-            'новости': news.say_news(10),
-        }
+        self.lock = Lock()
+        self.weather = Weather()
+        self.habr = Habrahabr()
+        self.news = News()
 
-    def run_command(self, command_string, telegram=True):
-        self.commands[command_string]
-
-    def get_command_list(self):
-        return self.command_list
+    def run_command(self, command_string):
+        with self.lock:
+            if command_string == 'погода':
+                self.weather.say_weather()
+            if command_string == 'хабр':
+                self.habr.say_habr_news(10)
+            if command_string == 'новости':
+                self.news.say_news(10)
 
 

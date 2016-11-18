@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# from weather import Weather
-# from speech import Speech
+#from weather import Weather
+from speech import Speech
 # from command_holder import CommandHolder
-# from news import News
-# from telegram_bot import Telegram
-#from habrahabr import Habrahabr
+from news import News
+from telegram_bot import Telegram
+from habrahabr import Habrahabr
 # w = Weather()
 # weather = w.get_weather()
 # s = Speech()
@@ -16,6 +16,6 @@
 # n = News()
 # n.say_news()
 # h = Habrahabr()
-# h.get_news()
+# h.say_habr_news()
 
-# t = Telegram()
+#t = Telegram()

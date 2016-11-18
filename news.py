@@ -5,6 +5,7 @@ import urllib.request
 import urllib.parse
 import json
 import zlib
+import ssl
 from speech import Speech
 
 
@@ -15,6 +16,7 @@ class News(object):
         speech.say_text(news_string)
 
     def get_news(self, max_value=10):
+        ssl._create_default_https_context = ssl._create_unverified_context
         url = 'https://meduza.io/api/v3/search?chrono=news&page=0&per_page=10&locale=ru'
         result = urllib.request.urlopen(url).read()
         decompressed_data = zlib.decompress(result, 16+zlib.MAX_WBITS).decode('utf-8')

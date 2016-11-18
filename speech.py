@@ -1,10 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import urllib.request
 import urllib.parse
 import urllib
 import subprocess
 import os
+import ssl
 
 
 class Speech(object):
@@ -50,6 +51,7 @@ class Speech(object):
         if a:
             url += urllib.parse.urlencode(a)
 
+        ssl._create_default_https_context = ssl._create_unverified_context
         urllib.request.urlretrieve(url, file)
         return (os.path.dirname(__file__)) + '/' + file
 
