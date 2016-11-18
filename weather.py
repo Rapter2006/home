@@ -6,12 +6,13 @@ import urllib.parse
 import json
 from speech import Speech
 
+
 class Weather(object):
     def __complect_weather_string(self, dict_data):
         today_weather = dict_data['forecasts'][0]
         six_hours_weather = today_weather['hours'][1]
         midday_weather = today_weather['hours'][2]
-        weather_str = 'В шесть утра была температура ' +  str(six_hours_weather['temperature']['avg']) + \
+        weather_str = 'В шесть утра была температура ' + str(six_hours_weather['temperature']['avg']) + \
                       ". Днем температура " + str(midday_weather['temperature']['avg']) + ', ветер ' + \
                       str(midday_weather['wind']['speed']['avg']) + ' метров в секунду.'
         return weather_str
